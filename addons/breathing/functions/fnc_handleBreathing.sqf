@@ -40,9 +40,9 @@ if (!local _unit) then {
     private _airway = true;
     private _breathing = true;
 
-    if ((_unit getVariable [QEGVAR(chemical,airPoisoning), false]) || (_unit getVariable [QGVAR(tensionpneumothorax), false]) || (_unit getVariable [QGVAR(hemopneumothorax), false])) then {
-        _breathing = false;
-    };
+    // if ((_unit getVariable [QEGVAR(chemical,airPoisoning), false]) || (_unit getVariable [QGVAR(tensionpneumothorax), false]) || (_unit getVariable [QGVAR(hemopneumothorax), false])) then {
+    //     _breathing = false;
+    // };
 
     if ((_unit getVariable [QEGVAR(airway,occluded), false]) || (_unit getVariable [QEGVAR(airway,obstruction), false])) then {
         _airway = false;
@@ -169,7 +169,7 @@ if (!local _unit) then {
         if (_finalOutput < 1) then {
             _finalOutput = 1;
         };
-        
+
         _unit setVariable [QGVAR(airwayStatus), _finalOutput, true];
     };
 
